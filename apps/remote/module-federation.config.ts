@@ -1,6 +1,9 @@
-export const mfConfig = {
+import { ModuleFederationOptions } from "@module-federation/rsbuild-plugin";
+
+export const mfConfig: ModuleFederationOptions = {
   name: "remote",
-  exposed: {
-    "./RemoteEntry": "./src/remote-entry.tsx",
+  filename: "remoteEntry.js",
+  exposes: {
+    "./RemoteEntry": "./src/remote-entry.tsx"
   }
 };
